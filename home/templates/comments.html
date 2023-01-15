@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title_tag %} Comments {% endblock %}
+
+{% block content %}
+    <br/>
+    <h1>Comments on post</h1>
+    <br/>
+    <ul>
+    {{ comments_posts.body }}
+    </ul>  
+
+{% endblock %}

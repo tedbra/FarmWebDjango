@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title_tag %} Adding Articles {% endblock %}
+
+{% block content2 %}
+
+    <h1>Add a new Article</h1>
+    
+    <br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- This prints the elements of the form as elements, every element sorrounded by their own P-->
+
+            <button class="btn hvr-hover"> POST</button>
+       
+    </div>
+
+{% endblock %}
+
+
+{% block contentTable %}
+
+    <h1>Add a new Article</h1>
+    
+    <br/>
+    <table>
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_table}} <!-- this prints the elements of the form as a table-->            
+        </form>
+    </table>
+    <button class="btn hvr-hover"> POST</button>
+
+
+{% endblock %}
+
+{% block contentList %}
+
+    <h1>Add a new Article</h1>
+    
+    <br/>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_ul}} <!-- this prints the elements of the form as a list-->>
+
+        <button class="btn hvr-hover"> POST</button>
+    </form>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="contact-form-right">
+                    {% if user.is_authenticated and user.id == 1 %}
+                    <h2>Add a new Article</h2> 
+                    <br/>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.media }}
+                                    {{ form.as_p }}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="submit-button text-center">
+                                <button class="btn hvr-hover" id="submit" type="submit">Create Post</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                    {% else %}
+                    <h2>{{noPermission}}</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

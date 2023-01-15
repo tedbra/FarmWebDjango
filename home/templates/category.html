@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title_tag %} Categories {% endblock %}
+
+{% block content %}
+    <br/>
+    {% if category_posts %}
+    <h2>Articles of category: <u>{{ cats }}</u></h2>
+    <br/>
+    <ul>
+    {% for post in category_posts %}
+        <li>
+            <a class="bd-link" href="{% url 'article-detail' post.pk %}" >{{ post.title }}</a> 
+            - {{ post.author.first_name }} - on {{ post.post_date }}
+            {% if user.is_authenticated %} -
+                <a class="bd-link" href="{% url 'update-article' post.pk %}"><small>[Edit]</small></a> - 
+                <a class="bd-link" href="{% url 'delete-article' post.pk %}"><small>[Delete]</small></a>
+            {% endif %}
+            <br/>
+            {{ post.body|slice:":200"|safe }}
+            <a class="bd-link" href="{% url 'article-detail' post.pk %}" > <small>...read More</small></a> 
+        </li>
+        <br/>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <h2>{{noPermission}}</h2> 
+    {% endif %} 
+    <br/>
+    <a class="bd-link" href="{% url 'blog' %}"> Back</a>
+{% endblock %}

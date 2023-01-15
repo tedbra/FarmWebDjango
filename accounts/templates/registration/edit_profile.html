@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title_tag %} Edit Profile {% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="contact-form-right">
+                    {% if user.is_authenticated %}
+                        {% if user.id == profile.user.id %}
+                            <h2>Update Profile</h2> 
+                            <br/>
+                            <form method="POST">
+                                {% csrf_token %}
+
+                                <div class="row">                            
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{ form.media }}
+                                            {{ form.as_p }}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Update</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        {% else %}
+                            Oops! This is not your profile..
+                        {% endif %}
+                    {% else %}
+                        {{noPermission}}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title_tag %} Blog Post {% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="contact-form-right">
+                    <br/>
+                    {% if user.is_authenticated and user.id == 1 %}
+                    <h1>Admin Panel on articles</h1>
+                        <br/>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <a class="btn hvr-hover" style="color:white" href="{% url 'blog' %}" >Display all articles</a> <br/><br/>
+                            <a class="btn hvr-hover" style="color:white" href="{% url 'add-article'%}">Add a new article</a> <br/><br/>
+                            <a class="btn hvr-hover" style="color:white" href="{% url 'add-category' %}">Add a new category</a> <br/><br/>
+                            <br/>
+                        </div>
+                    {% else %}
+
+                        <h2>{{noPermission}}</h2>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

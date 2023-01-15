@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title_tag %} Health - Blog {% endblock %}
+
+{% load static %}
+{% block content_home %}
+<!-- start of the banner -->
+<div class="all-title-box" style="background: url(../../static/home/images/blog-img.jpg) no-repeat center center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>{{ tipsTitle }}</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">{{home}}</a></li>
+                    <li class="breadcrumb-item active">{{ tipsTitle }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of the banner -->
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>{{tipsTitle}}</h1>
+                    <p>{{tipsMessage}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for post in object_list %}
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="{% static 'home/images/blog-img-01.jpg' %}" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h2>{{ post.title }}</h2>
+                            by : <a class="bd-link" href="{% url 'user-profile' post.author.profile.id %}">
+                                {{ post.author.first_name }}</a> - 
+                            <a class="bd-link" href="{% url 'category' post.category|slugify %}" >{{post.category}}</a>
+                            - on {{ post.post_date }}
+                            {% if user.is_authenticated and user.id == 1 %}
+                                <hr>
+                                <a class="bd-link" href="{% url 'update-article' post.pk %}"><small>[Edit]</small></a> - 
+                                <a class="bd-link" href="{% url 'delete-article' post.pk %}"><small>[Delete]</small></a>
+                            {% endif %}
+                            <hr>
+                            <p align="justify"> {{ post.body|safe }} </p>
+                            <a class="bd-link" href="{% url 'article-detail' post.pk %}" > <small>...read More</small></a> 
+                        </div>
+                        <ul class="option-blog">
+                            <li><a type="submit", name="post_id", value="{{ post.id }}" ><i class="far fa-heart"></i></a></li>
+                            <li><a href="{% url 'article-detail' post.pk %}"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="{% url 'add-comment' post.pk %}"><i class="far fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title_tag %} Add Comment {% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                {% if user.is_authenticated %}
+                <div class="contact-form-right">                    
+                    <h2>Add a new Comment</h2> 
+                    <br/>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.media }}
+                                    {{ form.as_p }}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="submit-button text-center">
+                                <button class="btn hvr-hover" id="submit" type="submit">Add Comment</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>                    
+                </div>
+                {% else %}
+                    {{ notLogIn }}<br/><br/>
+                    If you already have an account : 
+                    <a href="{% url 'signin' %}" class="bd-link"> Sign in</a><br/><br/>
+                    Create an account here : 
+                    <a href="{% url 'register' %}" class="bd-link"> Register</a><br/><br/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

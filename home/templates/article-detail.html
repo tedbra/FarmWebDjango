@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title_tag %} {{ post.title }} {% endblock %}
+{% load static %}
+
+{% block content %}
+    <br/>
+    <h1><strong>{{ post.title }}</strong></h1>
+    By: <a class="bd-link" href="{% url 'user-profile' post.author.profile.id %}">
+    {{ post.author.first_name }}</a>
+    - {{ post.post_date }} - 
+    <a class="bd-link" href="{% url 'category' post.category|slugify %}" >{{ post.category }}</a>
+    {% if user.is_authenticated and user.id == 1 %} - 
+        <a class="bd-link" href="{% url 'update-article' post.pk %}"> [Edit]</a> - 
+        <a class="bd-link" href="{% url 'delete-article' post.pk %}"> [Delete]</a>
+    {% endif %}
+    <br/> <br/>
+    {% if post.post_picture %}
+        <img src="{{ post.post_picture.url }}"> <br/><br/>
+    {% else %}
+        <img src="{% static 'home/images/blog-img-02.jpg' %}"> <br/><br/>
+    {% endif %}
+    {{ post.body|safe}}
+    <br/> <br/>
+    
+    {% if user.is_authenticated %}
+    <form action="{% url 'like_post' post.pk %}"
+    method="POST">
+        {% csrf_token %}
+
+        {% if liked %}
+        <button type="submit", name="post_id", value="{{ post.id }}", class="btn hvr-hover", style="color:white"> Like</button>
+        - {{total_likes}} Likes
+        {% else %}
+        <button type="submit", name="post_id", value="{{ post.id }}", class="btn hvr-hover", style="color:white; background: red;"> dislike</button>
+        - {{total_likes}} Likes
+        {% endif %}
+    </form>
+    {% else %} 
+    <a class="btn hvr-hover" style="color:white" href="{% url 'login' %}">Like</a>
+        - {{total_likes}} Likes
+    {% endif %}
+    <br>
+    <hr>
+    <h3><u>Comments:</u></h3>    
+    {% if not post.comments.all %}
+        <br/>
+        {{ noComments }}
+    {% else %}
+        {% for comment in post.comments.all %} <br/>
+            <img src="{% static 'account/images/user_picture.png' %}">
+            By : <strong>{{ comment.name }}</strong> on : <strong> {{ comment.date_added }} </strong>            
+            <br/>
+            {{ comment.my_comment|safe}}
+        {% endfor %}
+    {% endif %}
+    <br/><br/>
+    <a href="{% url 'add-comment' post.pk %}" class="btn hvr-hover", style="color: white;">Add a Comment</a>
+    <br/><br/><hr>
+    <a class="bd-link" href="{% url 'blog' %}"> Back</a>
+
+
+{% endblock %}

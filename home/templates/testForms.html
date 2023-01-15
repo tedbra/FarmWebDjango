@@ -1,0 +1,12 @@
+<title>Testing Forms</title>
+<h1>Testing Form Styles</h1>
+
+<br/>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }} 
+
+        <button class="btn btn-secondary"> POST</button>
+    
+</div>

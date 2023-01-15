@@ -1,0 +1,170 @@
+
+{
+    "parameterEnglish" : {
+        
+        "name" : "GNING 3",
+        "phoneNumber":"+237681033488",
+        "emailAddress":"gning2corp@gmail.com",
+        "addressLoc":"Ntamulung",
+        "addressTown":"Bamenda",
+        "addressCountry":"Cameroon",
+        
+        "currency1" : "Xaf",
+        "currency2" : "Dollar",
+        "currency3" : "Euro",
+
+        "callUs":"Call US :",
+        "account" : "Account",
+        "register":"Register",
+        "signIn" : "Log In",
+        "contactUs":"Contact Us",
+        "location":"Our location",
+        "marketInfo":"Market Info",
+        "investors":"Investors",
+        "partners":"Partners",
+        "team":"Team",
+
+        "aboutUs":"ABOUT US",
+        "home":"Home",
+        "shop":"Shop",
+        "cart":"Cart",
+        "sidebarShop":"Sidebar Shop",
+        "shopDetail":"Shop Detail",
+        "checkout":"Checkout",
+        "wishlist":"Wishlist",
+        "landRent":"RENT FARM",
+        "mycart":"My Cart",
+        "lang1":"EN",
+        "lang2":"FR",
+        "lang3":"PD",
+        "lang4":"CM",
+        "placeOrder":"Place Order",
+        "socialMedia":"Social Media",
+        "socialMediaMessage":"Follow us on our Social Media",
+
+        "products" : "Products",
+        "productsMessage":"We can supply to your restaurants, hotels or other services.",
+        "fruit1":"Cassava",
+        "fruit2":"Mushroom",
+        "fruit3":"Soja",
+        "fruit4":"Avocado",
+
+        "price1":"Xaf 10 (Price/kg)",
+        "price2":"Xaf 20 (Price/kg)",
+        "price3":"Xaf 10 (Price/kg)",
+        "price4":"Xaf 10 (Price/kg)",
+
+        "cartQuantity":"3",
+
+        "keyMessage1":"Here we know Agriculture is the key to the future of the Economy Boom",
+        "keyMessage2":"Our dream is to be one of the major suppliers and main actors in the Economic Boom of Africa through agriculture.",
+        "AboutUsMessage1":"GNING3 is a StartUp specialised in Sustainable Agriculture. Our aim is to supply organic Foods, cultivated in a sustanaible way to solve one of the major upcoming crisis - FOOD CRISIS. Creating a self sustaining farm to ensure a great level of Circularity. Fruit farming such as Avocados, is equally a priority in our StartUp.",
+        "AboutUsMessage2":"Mechanisation and Transformation is also one of our major targets. To take the primary products and make them into secondary products that have a higher marketable value and makes life easier for the consumers.",
+
+        "services":"Services",
+        "servicesTitle":"Processes and Services",
+        "servicesMessage":"Some of our services and Processes that we engage",
+        "services1":"Distribution",
+        "services2":"Farmland Renting",
+        "services3":"Transformation",
+        
+        "health":"Food Health",
+        "tipsTitle":"Health Tips",
+        "tipsMessage":"Culinary tips for healthy meals",
+        "tip1Title":"Eat Bio",
+        "tip1Message":"Eating organic reduces the amount of chemicals in your diet namely persistent pesticides. The use of insecticides, fungicides, fertilizers and weedkillers are strictly monitored in organic food production. Organic farming produces healthy food without the use of toxic pesticides",
+        "tip2Title":"Consume Vegetables",
+        "tip2Message":"Vegetables are a good source of vitamins and minerals, including folate, vitamin C and potassium. They're an excellent source of dietary fibre, which can help to maintain a healthy gut and prevent constipation and other digestion problems. A diet high in fibre can also reduce your risk of bowel cancer",
+        "tip3Title":"Proteins Role" ,
+        "tip3Message":"Your body needs protein to stay healthy and work the way it should. More than 10,000 types are found in everything from your organs to your muscles and tissues to your bones, skin, and hair. Protein is also a critical part of the Processes that fuel your energy and carry oxygen throughout your body in your blood",
+
+        "noPermission" : "Oops! You don't have the Permission",
+        "nextParam":"NextParam",
+        "noComments":"There are no comments yet...",
+        "notLogIn":"You need to be logged in first",
+        "inStock":"In Stock",
+        "outStock":"Out of Stock"
+
+    },
+
+    "parameterFrench" : {
+        "name" : "GNING 3",
+        "phoneNumber":"+237681033488",
+        "emailAddress":"gning2corp@gmail.com",
+        "addressLoc":"Ntamulung",
+        "addressTown":"Bamenda",
+        "addressCountry":"Cameroon",
+        
+        "currency1" : "Xaf",
+        "currency2" : "Dollar",
+        "currency3" : "Euro",
+        
+        "callUs":"Appelez nous :",
+        "account" : "Mon Compte",
+        "register":"S'inscrire ici",
+        "signIn" : "Log In",
+        "contactUs":"Contacts",
+        "location":"Localisation",
+        
+        "aboutUs":"À PROPOS",
+        "home":"Accueil",
+        "shop":"Boutique",
+        "cart":"Panier",
+        "sidebarShop":"Boutique",
+        "shopDetail":"Details Boutique",
+        "checkout":"Valider",
+        "wishlist":"Souhaits",
+        "landRent":"LOUER TERRAIN",
+        "mycart":"Panier",
+        "lang1":"FR",
+        "lang2":"EN",
+        "lang3":"PD",
+        "lang4":"CM",
+        "placeOrder":"Commander",
+        "socialMedia":"Reséaux Sociaux",
+        "socialMediaMessage":"Suivez nous sur nos réseaux",    
+        
+        "products" : "Produits",
+        "productsMessage":"Nous pouvons livrer dans vos restaurants, hotels et autres services.",
+        "fruit1":"Manioc",
+        "fruit2":"Champignon",
+        "fruit3":"Soja",
+        "fruit4":"Avocat",
+
+        "price1":"Xaf 10 (Prix/kg)",
+        "price2":"Xaf 20 (Prix/kg)",
+        "price3":"Xaf 10 (Prix/kg)",
+        "price4":"Xaf 10 (Prix/kg)",
+        
+        "cartQuantity":"3",
+        
+        "keyMessage1":"Ici, nous savons que l'agriculture est la clé de l'avenir du boom economique",
+        "keyMessage2":"Notre rêve est d'être l'un des principaux fournisseurs et acteurs principaux du boom économique de l'Afrique à travers l'agriculture.",
+        "AboutUsMessage1":"GNING3 est une StartUp spécialisée dans l'Agriculture Durable. Notre objectif est de fournir des aliments biologiques, cultivés de manière durable pour résoudre l'une des principales crises à venir - LA CRISE ALIMENTAIRE. Créer une ferme autonome pour assurer un haut niveau de circularité. L'arboriculture fruitière comme les Avocats est également une priorité dans notre StartUp.",
+        "AboutUsMessage2":"La mécanisation et la transformation font également partie de nos cibles majeures. Prendre les produits primaires et en faire des produits secondaires qui ont une valeur marchande plus élevée et facilitent la vie des consommateurs.",
+        
+        "services":"Services",
+        "servicesTitle":"Procesus et Services",
+        "servicesMessage":"Certains de nos services et Procesus",
+        "services1":"Distribution",
+        "services2":"Location Terrain",
+        "services3":"Transformation",
+
+        "health":"Santé",
+        "tipsTitle":"Astuces sante",
+        "tipsMessage":"Les astuces culinaire pour manger saine",
+        "tip1Title":"Manger Bio",
+        "tip1Message":"Manger bio réduit la quantité de produits chimiques dans votre alimentation, à savoir les pesticides persistants. L'utilisation d'insecticides, de fongicides, d'engrais et de désherbants est strictement contrôlee dans la production d'aliments biologiques. L'agriculture biologique produit des aliments sains sans l'utilisation de pesticides toxiques",
+        "tip2Title":"Consommer les Legumes",
+        "tip2Message":"Les légumes sont une bonne source de vitamines et de minéraux, notamment de folate, de vitamine C et de potassium. Ils sont une excellente source de fibres alimentaires, qui peuvent aider à maintenir un intestin sain et à prévenir la constipation et d'autres problemes de digestion. Une alimentation riche en fibres peut egalement réduire votre risque de cancer de l'intestin",
+        "tip3Title":"Proteines",
+        "tip3Message":"Votre corps a besoin de protéines pour rester en bonne santé et fonctionner comme il se doit. Plus de 10 000 types se trouvent dans tout, de vos organes à vos muscles et tissus en passant par vos os, votre peau et vos cheveux. Les protéines sont également un élément essentiel des Procesus qui alimentent votre énergie et transportent l'oxygène dans tout votre corps dans votre sang." ,
+        "noPermission":"Oops! vous n'avez pas la Permission",
+
+        "noComments":"Pas encore de commentaires... ",
+        "notLogIn":"Faut s'inscrire avant",
+        
+        "nextParam":"NextParam"
+    
+    }
+}

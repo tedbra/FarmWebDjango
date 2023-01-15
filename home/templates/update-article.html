@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title_tag %} Update Article {% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                {% if user.is_authenticated %} 
+                <div class="contact-form-right">
+                    <h2>Edit Article</h2> 
+                    <br/>                    
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.media }}
+                                    {{ form.as_p }}
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="submit-button text-center">
+                                <button class="btn hvr-hover" id="submit" type="submit">Update Post</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <h2>{{noPermission}}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_tag %} My Profile {% endblock %}
+
+{% block content %}
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="contact-form-right">
+                    <h2> MY PROFILE</h2> 
+                    <hr> 
+                        {% if user.profile.profile_pic %}
+                            <img src="{{ user.profile.profile_pic.url }}" width=300 height=300 class="rounded-circle"><br/>
+                        {% else %} 
+                            <img src="{% static 'account/images/profile_Picture.png' %}" height="300" width="300" class="rounded-circle"/><br/>
+                        {% endif %}
+                        <br/>                   
+                        Username : <strong> {{ user.username}} </strong><br/> 
+                        First Name : <strong> {{ user.first_name}}</strong><br/>
+                        Last Name : <strong> {{ user.last_name}}</strong><br/>
+                        Email : <strong> {{ user.email}}</strong><br/>
+                        BIO : <a align="justify">{{user.profile.bio|safe}}</a>
+                        Date Joined: <strong> {{ user.date_joined}}</strong><br/>
+                        Last Login: <strong> {{ user.last_login}}</strong><br/>      
+                                           
+                    <hr>
+                    <div class="row">
+                        <a class="btn hvr-hover" href="{% url 'edit-User' %}" style="color: white;">Edit Settings</a>
+                        {% if user.profile.id %}
+                            <a class="btn hvr-hover" href="{% url 'edit-profile' user.profile.id %}" style="color: white;">Edit Profile</a>
+                        {% else %}
+                        <a class="btn hvr-hover" href="{% url 'create-profile' %}" style="color: white;">Create Profile</a>
+                        {% endif %}
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

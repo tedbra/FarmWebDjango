@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_tag %} User Profile {% endblock %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-12">
+        <h2 class="noo-sh-title">User Profile</h2>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="hover-team">
+            <div class="our-team"> 
+                {% if page_user.profile_pic %}
+                    <img src="{{ page_user.profile_pic.url }}" height=320 width=270 >
+                {% else %}
+                    <img src="{% static 'account/images/profile_Picture.png' %}" height="320" width="270" alt="" />
+                {% endif %}
+                <div class="team-content">
+                    <br/>
+                    <h3 class="title">{{page_user.user.first_name}}</h3> <span class="post">Web Developer</span> </div>
+                <ul class="social">
+                    <li>
+                        {% if page_user.whatsapp_url %}
+                            <a href="{{page_user.whatsapp_url}}" class="fab fa-whatsapp"></a>
+                        {% else %}
+                            <a class="fab fa-whatsapp"></a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if page_user.facebook_url %}
+                            <a href="{{page_user.facebook_url}}" class="fab fa-facebook"></a>
+                        {% else %}
+                            <a class="fab fa-facebook"></a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if page_user.twitter_url %}
+                            <a href="{{page_user.twitter_url}}" class="fab fa-twitter"></a>
+                        {% else %}
+                            <a class="fab fa-twitter"></a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if page_user.linkedin_url %}
+                            <a href="{{page_user.linkedin_url}}" class="fab fa-linkedin"></a>
+                        {% else %}
+                            <a class="fab fa-linkedin"></a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if page_user.instagram_url %}
+                            <a href="{{page_user.instagram_url}}" class="fab fa-instagram"></a>
+                        {% else %}
+                            <a class="fab fa-instagram"></a>
+                        {% endif %}
+                    </li>
+                </ul>
+                <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+            </div>
+            <div class="team-description">
+                Name : {{ page_user.user.first_name}} {{ page_user.user.last_name}} <br/>
+                Phone : {{ page_user.phoneCountry }} {{ page_user.phoneNumber }}<br/>
+                Company: {{ page_user.company}} <br/>
+               
+            </div>
+            <hr class="my-0"> </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <h3> Bio </h3>
+        <div>
+            {{ page_user.bio|safe}} 
+        </div>
+    </div>
+</div>
+<div class="row"><a class="btn hvr-hover" href="{% url 'blog' %}" style="color: white;">Back</a> </div>
+{% endblock %}
+
+
+
+
