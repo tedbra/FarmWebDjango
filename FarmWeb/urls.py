@@ -24,6 +24,8 @@ urlpatterns = [
     path('home/',include('home.urls')),    
     path('product/',include('product.urls')),
     path('farm/',include('farm.urls')),
+    path('team/',include('team.urls')),
+    path('activity/',include('activity.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/',include('accounts.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
