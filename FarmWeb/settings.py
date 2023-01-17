@@ -44,10 +44,6 @@ INSTALLED_APPS = [
     "ckeditor",
     'home',
     'accounts',
-    'farm',
-    'product',
-    'activity',
-    'team'
 ]
 
 MIDDLEWARE = [
